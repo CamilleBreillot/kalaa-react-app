@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const IndicatorForm = ({ onAdd }) => {
+const IndicatorForm = ({ addIndicator }) => {
   const [indicator, setIndicator ] = useState({
     name: '',
     value: 0,
@@ -9,12 +9,9 @@ const IndicatorForm = ({ onAdd }) => {
   const onSubmit = (e) => {
     e.preventDefault()
 
-    if (!indicator.name) {
-      alert('Please fill all fields')
-    }
-    onAdd({ collect })
+    addIndicator({ indicator })
 
-    setCollect('')
+    setIndicator('')
   }
 
   return (

@@ -62,18 +62,10 @@ const App = () => {
     setCollects([...collects, data])
   }
 
-  //Add indicator
-  const addCollect = async (collect) => {
-    const res = await fetch('http://127.0.0.1:3000/api/v1/collections', {
-      method: 'POST',
-      headers: {
-        'Content-type': 'application/json',
-      },
-      body: JSON.stringify(collect),
-    })
-    const data = await res.json()
-    console.log(data)
-    setCollects([...collects, data])
+  //Add selected indicator
+  const addIndicator = (indicator) => {
+    console.log(indicator)
+    setSelectedIndicators([...selectedIndicators, indicator])
   }
 
   // Delete collect
@@ -105,7 +97,8 @@ const App = () => {
             <Route exact path="/" element={<Store collects={collects}
             onDelete={deleteCollect} onAdd={addCollect} selectedIndicators={selectedIndicators}/>}/>
             <Route exact path="/siege" element={<National collects={collects}
-            onDelete={deleteCollect} indicators={indicators} selectedIndicators={selectedIndicators}/>} />
+            onDelete={deleteCollect} indicators={indicators} selectedIndicators={selectedIndicators}
+            addIndicator={addIndicator} />} />
           </Routes>
         </div>
         <div>
