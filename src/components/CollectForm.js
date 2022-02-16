@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const CollectForm = ({ onAdd }) => {
+const CollectForm = ({ onAdd, selectedIndicators }) => {
   const classes = useStyles();
 
   return (
@@ -29,18 +29,10 @@ const CollectForm = ({ onAdd }) => {
           name: '',
           asso: '',
           date: '',
-          indicators_attributes: [{
-            name:'Poids',
-            value: 0
-          },
-          {
-            name: 'Participants',
-            value: 0
-          }]
+          indicators_attributes: selectedIndicators,
         }}
         onSubmit={(values) => {
           onAdd(values)
-
         }}>
           {({ values, errors, isSubmitting }) => (
             <Form autoComplete='off'>
@@ -83,7 +75,7 @@ const CollectForm = ({ onAdd }) => {
                               name={`indicators_attributes[${index}].name`}
                               component={TextField}
                               label="Indicator"
-                              disabled="disabled"
+                              disabled={true}
                             />
                           </Grid>
                           <Grid item className={classes.stretch}>
