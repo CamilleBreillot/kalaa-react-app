@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { BrowserRouter as Router, Route} from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Header from './components/Header'
 import CollectList from './components/CollectList'
@@ -52,15 +53,17 @@ const App = () => {
 
   return (
     <div>
-      <Navbar />
-      <div className="container">
-        <Header />
-        <div className="collect-container">
-          {collects.length > 0 ? <CollectList collects={collects}
-            onDelete={deleteCollect} /> : 'No collects yet'}
-          <CollectForm onAdd={addCollect} />
+      <Router>
+        <Navbar />
+        <div className="container">
+          <Header />
+          <div className="collect-container">
+            {collects.length > 0 ? <CollectList collects={collects}
+              onDelete={deleteCollect} /> : 'No collects yet'}
+            <CollectForm onAdd={addCollect} />
+          </div>
         </div>
-      </div>
+      </Router>
     </div>
   );
 }
