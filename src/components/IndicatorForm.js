@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
-const IndicatorForm = ({ addIndicator }) => {
-  const [indicator, setIndicator ] = useState({
+const IndicatorForm = ({ addField }) => {
+  const [field, setField ] = useState({
     name: '',
     value: 0,
   })
@@ -9,17 +9,17 @@ const IndicatorForm = ({ addIndicator }) => {
   const onSubmit = (e) => {
     e.preventDefault()
 
-    addIndicator({ indicator })
+    addField({ field })
 
-    setIndicator('')
+    setField('')
   }
 
   return (
     <form className='add-form' onSubmit={onSubmit}>
       <div className='form-control'>
         <label>Name</label>
-        <input type='text' placeholder='Add name' value={indicator.name}
-        onChange={(e) => setIndicator(e.target.value)}/>
+        <input type='text' placeholder='Add name' value={field.name}
+        onChange={(e) => setField(e.target.value)}/>
       </div>
       <input type='submit' value='Save Indicator' className='btn btn-block'></input>
     </form>

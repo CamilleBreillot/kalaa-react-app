@@ -2,11 +2,11 @@ import CollectList from './components/CollectList'
 import Statistics from './components/Statistic'
 import IndicatorForm from './components/IndicatorForm'
 
-const National = ({ collects, onDelete, indicators, selectedIndicators, addIndicator }) => {
+const National = ({ collects, onDelete, indicators, selectedFields, addField }) => {
   return (
     <div>
       <Statistics collects={collects} indicators={indicators}/>
-      <IndicatorForm selectedIndicators={selectedIndicators} addIndicator={addIndicator}/>
+      <IndicatorForm selectedFields={selectedFields} addField={addField}/>
 
       <div>
         {collects.length > 0 ? <CollectList collects={collects}

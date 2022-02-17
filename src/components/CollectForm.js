@@ -2,6 +2,7 @@ import { Card, CardContent, Grid, Button, CircularProgress, Typography, makeStyl
 import { Form, Formik, Field, FieldArray } from 'formik';
 import { TextField } from 'formik-material-ui';
 import React from 'react';
+import { useState, useEffect } from 'react'
 
 const useStyles = makeStyles((theme) => ({
   errorColor: {
@@ -17,19 +18,26 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const CollectForm = ({ onAdd, selectedIndicators }) => {
+const CollectForm = ({ onAdd, selectedFields }) => {
   const classes = useStyles();
+  const [test, settest] = useState([])
+
+  useEffect(() => {
+    settest(selectedFields)
+  }, [selectedFields])
+  console.log(test)
 
   return (
     <div className='form-section'>
     <Card>
       <CardContent>
         <Formik
+          enableReinitialize={true}
           initialValues={{
           name: '',
           asso: '',
           date: '',
-          indicators_attributes: selectedIndicators,
+          indicators_attributes: test,
         }}
         onSubmit={(values) => {
           onAdd(values)
@@ -74,7 +82,7 @@ const CollectForm = ({ onAdd, selectedIndicators }) => {
                               fullWidth
                               name={`indicators_attributes[${index}].name`}
                               component={TextField}
-                              label="Indicator"
+                              label="indicator"
                               disabled={true}
                             />
                           </Grid>

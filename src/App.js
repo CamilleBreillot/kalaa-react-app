@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Header from './components/Header'
@@ -10,16 +10,10 @@ import National from './National'
 const App = () => {
   const [collects, setCollects] = useState([])
   const [indicators, setIndicators] = useState([])
-  const [selectedIndicators, setSelectedIndicators] = useState([
-    {
-      "name": "test",
-      "value": 0
-    },
-    {
-      "name": "test2",
-      "value": 0
-    }
+
+  const [selectedFields, setSelectedFields] = useState([
   ])
+  console.log(selectedFields)
 
   useEffect(() => {
     const getCollects = async () => {
@@ -30,13 +24,25 @@ const App = () => {
       const indicatorsFromServer = await fetchIndicators()
       setIndicators(indicatorsFromServer)
     }
+    const getFields = async () => {
+      const fieldsFromServer = await fetchFields()
+      setSelectedFields(fieldsFromServer)
+    }
     getCollects()
     getIndicators()
+    getFields()
   }, [])
 
   //Fetch collects
   const fetchCollects = async () => {
     const res = await fetch('http://127.0.0.1:3000/api/v1/collections')
+    const data = await res.json()
+    return data
+  }
+
+  //Fetch fields
+  const fetchFields = async () => {
+    const res = await fetch('http://127.0.0.1:3000/api/v1/fields')
     const data = await res.json()
     return data
   }
@@ -62,10 +68,17 @@ const App = () => {
     setCollects([...collects, data])
   }
 
-  //Add selected indicator
-  const addIndicator = (indicator) => {
-    console.log(indicator)
-    setSelectedIndicators([...selectedIndicators, indicator])
+  //Add field
+  const addField = async (field) => {
+    const res = await fetch('http://127.0.0.1:3000/api/v1/fields', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify(field),
+    })
+    const data = await res.json()
+    setSelectedFields([...selectedFields, data])
   }
 
   // Delete collect
@@ -95,10 +108,10 @@ const App = () => {
           <Header />
           <Routes>
             <Route exact path="/" element={<Store collects={collects}
-            onDelete={deleteCollect} onAdd={addCollect} selectedIndicators={selectedIndicators}/>}/>
+            onDelete={deleteCollect} onAdd={addCollect} selectedFields={selectedFields}/>}/>
             <Route exact path="/siege" element={<National collects={collects}
-            onDelete={deleteCollect} indicators={indicators} selectedIndicators={selectedIndicators}
-            addIndicator={addIndicator} />} />
+            onDelete={deleteCollect} indicators={indicators} selectedFields={selectedFields}
+            addField={addField} />} />
           </Routes>
         </div>
         <div>
