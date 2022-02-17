@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
-import Footer from './components/Footer'
-import Header from './components/Header'
 import Store from './Store'
 import National from './National'
 
@@ -113,7 +111,6 @@ const App = () => {
           <Navbar />
         </div>
         <div className="main-container">
-          <Header />
           <Routes>
             <Route exact path="/" element={<Store collects={collects}
             onDelete={deleteCollect} onAdd={addCollect} selectedFields={selectedFields}/>}/>
@@ -121,9 +118,6 @@ const App = () => {
             onDelete={deleteCollect} indicators={indicators} selectedFields={selectedFields}
             addField={addField} deleteField={deleteField}/>} />
           </Routes>
-        </div>
-        <div>
-          <Footer />
         </div>
     </div>
   );

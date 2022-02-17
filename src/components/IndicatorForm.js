@@ -7,13 +7,14 @@ import React from 'react';
 const IndicatorForm = ({ addField }) => {
 
   return (
-    <div className='collect-form-section'>
+    <div className='field-list-section'>
+      <h5 className='text-center mb-3'>Ajouter un indicateur à suivre</h5>
       <Card>
         <CardContent>
           <Formik
             // enableReinitialize={true}
             initialValues={{
-              name: 'Indicator',
+              name: '',
             }}
             onSubmit={(values) => {
               addField(values)
@@ -26,7 +27,7 @@ const IndicatorForm = ({ addField }) => {
                       fullWidth
                       name="name"
                       component={TextField}
-                      label="name"
+                      label="Nom de l'indicateur"
                     />
                   </Grid>
 
@@ -37,7 +38,7 @@ const IndicatorForm = ({ addField }) => {
                       variant="contained"
                       color="primary"
                     >
-                      {isSubmitting ? 'Submitting' : 'Submit'}</Button>
+                      {isSubmitting ? 'Ajout en cours' : 'Ajouter'}</Button>
                   </Grid>
                 </Grid>
               </Form>

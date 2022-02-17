@@ -3,11 +3,14 @@ import { FaTimes } from 'react-icons/fa'
 const Collect = ( { collect, onDelete }) => {
   return (
     <div className='task'>
-      <h3>
+      <h5>
         {collect.name}
         <FaTimes onClick={ () => onDelete(collect.id)}/>
-      </h3>
-      <p>{ collect.date }</p>
+      </h5>
+      <div className='d-flex'>
+        <p className='mx-2 p-1 border border-secondary rounded'>Date : { collect.date }</p>
+        <p className='mx-2 p-1 border border-secondary rounded'>Association : { collect.asso}</p>
+      </div>
     </div>
   )
 }

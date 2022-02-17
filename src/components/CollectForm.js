@@ -29,112 +29,101 @@ const CollectForm = ({ onAdd, selectedFields }) => {
 
   return (
     <div className='collect-form-section'>
-    <Card>
-      <CardContent>
-        <Formik
-          enableReinitialize={true}
-          initialValues={{
-          name: '',
-          asso: '',
-          date: '',
-          indicators_attributes: result,
-        }}
-        onSubmit={(values) => {
-          onAdd(values)
-        }}>
-          {({ values, errors, isSubmitting }) => (
-            <Form autoComplete='off'>
-              <Grid container direction="column" spacing={2}>
-                <Grid item>
-                  <Field
-                    fullWidth
-                    name="name"
-                    component={TextField}
-                    label="name"
-                  />
-                </Grid>
-                <Grid item>
-                  <Field
-                    fullWidth
-                    name="asso"
-                    component={TextField}
-                    label="asso"
-                  />
-                </Grid>
-                <Grid item>
-                  <Field
-                    name="date"
-                    type='date'
-                  />
-                </Grid>
+      <h5 className='text-center mb-3'>Déclarer une nouvelle collecte</h5>
+      <Card>
+        <CardContent>
+          <Formik
+            enableReinitialize={true}
+            initialValues={{
+            name: '',
+            asso: '',
+            date: '',
+            indicators_attributes: result,
+          }}
+          onSubmit={(values) => {
+            onAdd(values)
+          }}>
+            {({ values, errors, isSubmitting }) => (
+              <Form autoComplete='off'>
+                <Grid container direction="column" spacing={2}>
+                  <Grid item>
+                    <Field
+                      fullWidth
+                      name="name"
+                      component={TextField}
+                      label="Nom de la collecte"
+                    />
+                  </Grid>
+                  <Grid item>
+                    <Field
+                      fullWidth
+                      name="asso"
+                      component={TextField}
+                      label="Association partenaire"
+                    />
+                  </Grid>
+                  <Grid item>
+                    <Field
+                      name="date"
+                      type='date'
+                    />
+                  </Grid>
 
-                <FieldArray name="indicators_attributes">
-                  {({push, remove}) => (
-                    <React.Fragment>
-                       <Grid item>
-                         <Typography variant="body2">Indicators to fill</Typography>
-                       </Grid>
-
-                      {values.indicators_attributes.map((_, index) => (
-                        <Grid container item key={index} spacing={2}>
-                          <Grid item className={classes.stretch}>
-                            <Field
-                              fullWidth
-                              name={`indicators_attributes[${index}].name`}
-                              component={TextField}
-                              label="indicator"
-                              disabled={true}
-                            />
-                          </Grid>
-                          <Grid item className={classes.stretch}>
-                            <Field
-                              fullWidth
-                              name={`indicators_attributes[${index}].value`}
-                              component={TextField}
-                              type="number"
-                              label="Value"
-                            />
-                          <Grid item>
-                            <Button onClick={() => remove(index)}>Delete</Button>
-                          </Grid>
-                          </Grid>
+                  <FieldArray name="indicators_attributes">
+                    {({push, remove}) => (
+                      <React.Fragment>
+                        <Grid item>
+                          <Typography variant="body1">Indicateurs à renseigner</Typography>
                         </Grid>
-                      ))}
 
-                      <Grid item>
-                        <Button
-                          variant="contained"
-                          onClick={() => push({name:"", value: 0})}>Add</Button>
-                      </Grid>
-                    </React.Fragment>
-                  )}
+                        {values.indicators_attributes.map((_, index) => (
+                          <Grid container item key={index} spacing={2}>
+                            <Grid item className={classes.stretch}>
+                              <Field
+                                fullWidth
+                                name={`indicators_attributes[${index}].name`}
+                                component={TextField}
+                                label="Indicateur"
+                                disabled={true}
+                              />
+                            </Grid>
+                            <Grid item className={classes.stretch}>
+                              <Field
+                                fullWidth
+                                name={`indicators_attributes[${index}].value`}
+                                component={TextField}
+                                type="number"
+                                label="Valeur"
+                              />
+                            </Grid>
+                          </Grid>
+                        ))}
+                      </React.Fragment>
+                    )}
 
 
-                </FieldArray>
+                  </FieldArray>
 
-                <Grid item>
-                  <Button
-                    disabled={isSubmitting}
-                    type="submit"
-                    variant="contained"
-                    color="primary"
-                    startIcon={
-                      isSubmitting ? (
-                        <CircularProgress size="0.9rem" />
-                      ) : undefined
-                    }
-                    >
-                    {isSubmitting ? 'Submitting' : 'Submit'}</Button>
+                  <Grid item>
+                    <Button
+                      disabled={isSubmitting}
+                      type="submit"
+                      variant="contained"
+                      color="primary"
+                      startIcon={
+                        isSubmitting ? (
+                          <CircularProgress size="0.9rem" />
+                        ) : undefined
+                      }
+                      >
+                      {isSubmitting ? 'Déclaration en cours' : 'Déclarer'}</Button>
+                  </Grid>
                 </Grid>
-
-              </Grid>
-
-              <pre>{JSON.stringify({ values, errors }, null, 4)}</pre>
-            </Form>
-          )}
-        </Formik>
-      </CardContent>
-    </Card>
+              </Form>
+            )}
+          </Formik>
+        </CardContent>
+      </Card>
     </div>
   );
 }

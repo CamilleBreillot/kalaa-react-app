@@ -3,7 +3,8 @@ import Field from './Field'
 const FieldList = ({ selectedFields, deleteField}) => {
 
   return (
-    <div className='collect-lists-section'>
+    <div className='field-list-section'>
+      <h5 className='text-center mb-3'>Liste des indicateurs à date</h5>
       {selectedFields.map((field) => (
         <Field
           key={field.name}

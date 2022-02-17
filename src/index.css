@@ -8,16 +8,26 @@
 
 body {
   font-family: 'Poppins', sans-serif;
+  background-color: #E8F5F7;
 }
 
 header {
   text-align: center;
+  margin-top: 30px;
+}
+
+.subheader {
+  margin: 50px 0px 30px 0px;
+}
+
+.subheader h3 {
+  color:#28534C
 }
 
 .main-container {
   max-width: 1300px;
   margin: 0 auto;
-  height: 100vh;
+  height: 75vh;
 }
 
 .collect-container {
@@ -26,14 +36,23 @@ header {
 
 .field-container {
   display: flex;
+  justify-content: center;
 }
 
 .collect-lists-section {
-  flex: 50%
+  flex: 50%;
 }
 
 .collect-form-section {
   flex: 50%
+}
+
+.field-list-section {
+  flex: 50%;
+}
+
+.field-form-section {
+  flex: 50%;
 }
 
 .btn {
@@ -64,20 +83,17 @@ header {
 }
 
 .task {
-  background: #f4f4f4;
+  background: white;
   margin: 5px;
   padding: 10px 20px;
   cursor: pointer;
 }
 
-.task.reminder {
-  border-left: 5px solid green;
-}
-
-.task h3 {
+.task h5 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: #28534C;
 }
 
 .add-form {

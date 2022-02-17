@@ -1,8 +1,10 @@
 import { CardGroup, Card } from 'react-bootstrap';
+import CardStat from './CardStat'
 
-const Statistics = ({ collects, indicators }) => {
-  const weight = indicators.filter(e => e.name === "Poids des denrées").map(e => e.value).reduce((prev, curr) => prev + curr, 0);
-  const participants = indicators.filter(e => e.name === "Nb de participants").map(e => e.value).reduce((prev, curr) => prev + curr, 0);
+const Statistics = ({ collects, selectedFields, indicators }) => {
+  // const weight = indicators.filter(e => e.name === "Poids des denrées").map(e => e.value).reduce((prev, curr) => prev + curr, 0);
+  // const participants = indicators.filter(e => e.name === "Nb de participants").map(e => e.value).reduce((prev, curr) => prev + curr, 0);
+  // const price = indicators.filter(e => e.name === "Valeur des lots").map(e => e.value).reduce((prev, curr) => prev + curr, 0);
 
   return (
     <div>
@@ -18,27 +20,12 @@ const Statistics = ({ collects, indicators }) => {
             </Card.Title>
           </Card.Body>
         </Card>
-
-          <Card>
-            <div className="d-flex align-items-center flex-grow-1 text-center">
-              <Card.Body>
-                <Card.Title>
-                    <h1>{weight}</h1>
-                    <p>poids (kg) des denrées collectées</p>
-                </Card.Title>
-              </Card.Body>
-            </div>
-          </Card>
-        <Card>
-          <div className="d-flex align-items-center flex-grow-1 text-center">
-            <Card.Body>
-              <Card.Title>
-                <h1>{participants}</h1>
-                <p>participants aux collectes</p>
-              </Card.Title>
-            </Card.Body>
-          </div>
-        </Card>
+        {selectedFields.map((field) => (
+          <CardStat
+            key={field.id}
+            field={field}
+            indicators={indicators}/>
+        ))}
       </CardGroup>
     </div>
   )

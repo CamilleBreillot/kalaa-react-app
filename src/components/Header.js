@@ -1,14 +1,10 @@
-const Header = () => {
+const Header = ({ title, text }) => {
   return (
     <header>
-      <h1>Hello Test Store</h1>
-      <p>Some text and how many collects already done</p>
+      <h1>{ title }</h1>
+      <p>{ text }</p>
     </header>
   )
 }
-
-// Header.defaultProps = {
-//   title: 'Collect tracker'
-// }
 
 export default Header
