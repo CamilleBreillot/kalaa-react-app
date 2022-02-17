@@ -14,13 +14,12 @@ function Navbar() {
               <li className="nav-item">
                 <NavLink className="nav-link" to="/">
                   Magasin
-                  <span className="sr-only">(current)</span>
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/siege">
+                <a className="nav-link" href="/siege">
                   Siège
-                </NavLink>
+                </a>
               </li>
             </ul>
           </div>

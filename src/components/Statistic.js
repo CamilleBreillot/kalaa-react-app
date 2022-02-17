@@ -3,6 +3,7 @@ import CardStat from './CardStat'
 
 const Statistics = ({ collects, selectedFields, indicators }) => {
 
+
   return (
     <div>
       <CardGroup>
@@ -12,7 +13,7 @@ const Statistics = ({ collects, selectedFields, indicators }) => {
             <Card.Title>
               <div className='text-center'>
                 <h1>{collects.length}</h1>
-                <p>collectes déclarées</p>
+                <p>Collectes déclarées</p>
               </div>
             </Card.Title>
           </Card.Body>
