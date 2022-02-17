@@ -24,11 +24,15 @@ header {
   display: flex;
 }
 
+.field-container {
+  display: flex;
+}
+
 .collect-lists-section {
   flex: 50%
 }
 
-.form-section {
+.collect-form-section {
   flex: 50%
 }
 

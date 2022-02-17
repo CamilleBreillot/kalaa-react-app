@@ -25,10 +25,10 @@ const CollectForm = ({ onAdd, selectedFields }) => {
   useEffect(() => {
     settest(selectedFields)
   }, [selectedFields])
-  console.log(test)
+  const result = test.map(e => ({ name: e.name, value: e.value }))
 
   return (
-    <div className='form-section'>
+    <div className='collect-form-section'>
     <Card>
       <CardContent>
         <Formik
@@ -37,7 +37,7 @@ const CollectForm = ({ onAdd, selectedFields }) => {
           name: '',
           asso: '',
           date: '',
-          indicators_attributes: test,
+          indicators_attributes: result,
         }}
         onSubmit={(values) => {
           onAdd(values)

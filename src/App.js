@@ -89,6 +89,14 @@ const App = () => {
     setCollects(collects.filter((collect) => collect.id !== id))
   }
 
+  // Delete field
+  const deleteField = async (id) => {
+    await fetch(`http://127.0.0.1:3000/api/v1/fields/${id}`, {
+      method: 'DELETE',
+    })
+    setSelectedFields(selectedFields.filter((field) => field.id !== id))
+  }
+
   // // Toggle active
   // const toggleActive = (id) => {
   //   setCollects(collects.map((collect) => collect.id === id ?
@@ -111,7 +119,7 @@ const App = () => {
             onDelete={deleteCollect} onAdd={addCollect} selectedFields={selectedFields}/>}/>
             <Route exact path="/siege" element={<National collects={collects}
             onDelete={deleteCollect} indicators={indicators} selectedFields={selectedFields}
-            addField={addField} />} />
+            addField={addField} deleteField={deleteField}/>} />
           </Routes>
         </div>
         <div>
