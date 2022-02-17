@@ -3,6 +3,7 @@ import { Form, Formik, Field, FieldArray } from 'formik';
 import { TextField } from 'formik-material-ui';
 import React from 'react';
 import { useState, useEffect } from 'react'
+import { object, number, string, date, array } from 'yup'
 
 const useStyles = makeStyles((theme) => ({
   errorColor: {
@@ -40,8 +41,16 @@ const CollectForm = ({ onAdd, selectedFields }) => {
             date: '',
             indicators_attributes: result,
           }}
-          onSubmit={(values) => {
-            onAdd(values)
+          validationSchema={object({
+            name: string().required('Le nom de la collecte est obligatoire'),
+            asso: string().required("L'association partenaire est obligatoire"),
+            date: date().required('La date est obligatoire'),
+            indicators_attributes: array(object({
+              value: number().required("Obligatoire")
+            }))
+          })}
+          onSubmit={async (values) => {
+            await onAdd(values)
           }}>
             {({ values, errors, isSubmitting }) => (
               <Form autoComplete='off'>
@@ -129,75 +138,3 @@ const CollectForm = ({ onAdd, selectedFields }) => {
 }
 
 export default CollectForm
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import { useState } from 'react'
-
-// const Form = ({ onAdd }) => {
-//   const [collect, setCollect ] = useState({
-//     name: '',
-//     asso: '',
-//     date: '',
-//     indicators: [
-//       {
-//         name:'Denrées collectées',
-//         value: ''
-//       },
-//       {
-//         name: 'Participants',
-//         value: ''
-//       },
-//     ]
-//   })
-
-//   const onSubmit = (e) => {
-//     e.preventDefault()
-
-//     // if (!name || !asso || !date) {
-//     //   alert('Please fill all fields')
-//     // }
-//     onAdd({ collect })
-
-//     setCollect('')
-//   }
-
-//   return (
-//     <form className='add-form' onSubmit={onSubmit}>
-//       <div className='form-control'>
-//         <label>Name</label>
-//         <input type='text' placeholder='Add name' value={collect.name}
-//         onChange={(e) => setName(e.target.value)}/>
-//       </div>
-//       <div className='form-control'>
-//         <label>Association</label>
-//         <input type='text' placeholder='Add association' value={asso}
-//           onChange={(e) => setAsso(e.target.value)} />
-//       </div>
-//       <div className='form-control'>
-//         <label>Date</label>
-//         <input type='date' value={date}
-//           onChange={(e) => setDate(e.target.value)} />
-//       </div>
-//       <input type='submit' value='Save Collect' className='btn btn-block'></input>
-//     </form>
-//   )
-// }
-
-// export default Form

@@ -1,6 +1,7 @@
 import { Card, CardContent, Grid, Button } from '@material-ui/core';
 import { Form, Formik, Field } from 'formik';
 import { TextField } from 'formik-material-ui';
+import { object, string } from 'yup'
 import React from 'react';
 
 
@@ -16,8 +17,12 @@ const IndicatorForm = ({ addField }) => {
             initialValues={{
               name: '',
             }}
-            onSubmit={(values) => {
-              addField(values)
+            validationSchema={object({
+              name: string().required("Le nom de l'indicateur est obligatoire")
+            })}
+            onSubmit={async (values) => {
+              values.value = 0
+              await addField(values)
             }}>
             {({ values, errors, isSubmitting }) => (
               <Form autoComplete='off'>

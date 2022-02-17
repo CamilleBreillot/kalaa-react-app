@@ -2,9 +2,6 @@ import { CardGroup, Card } from 'react-bootstrap';
 import CardStat from './CardStat'
 
 const Statistics = ({ collects, selectedFields, indicators }) => {
-  // const weight = indicators.filter(e => e.name === "Poids des denrées").map(e => e.value).reduce((prev, curr) => prev + curr, 0);
-  // const participants = indicators.filter(e => e.name === "Nb de participants").map(e => e.value).reduce((prev, curr) => prev + curr, 0);
-  // const price = indicators.filter(e => e.name === "Valeur des lots").map(e => e.value).reduce((prev, curr) => prev + curr, 0);
 
   return (
     <div>
