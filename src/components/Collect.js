@@ -5,11 +5,11 @@ const Collect = ( { collect, onDelete }) => {
   const location = useLocation()
   return (
     <div className='task'>
-      <h5>
+      <h4>
         {collect.name}
         {location.pathname === '/' &&
           (<FaTimes onClick={() => onDelete(collect.id)} />)}
-      </h5>
+      </h4>
       <div className='d-flex'>
         <p className='mx-2 p-1 border border-secondary rounded'>Date : { collect.date }</p>
         <p className='mx-2 p-1 border border-secondary rounded'>Association : { collect.asso}</p>

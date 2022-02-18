@@ -95,16 +95,6 @@ const App = () => {
     setSelectedFields(selectedFields.filter((field) => field.id !== id))
   }
 
-  // // Toggle active
-  // const toggleActive = (id) => {
-  //   setCollects(collects.map((collect) => collect.id === id ?
-  //   { ...collect, } : collect ))
-  // }
-
-  // const fillSelected = () => {
-
-  // }
-
   return (
     <div>
         <div>

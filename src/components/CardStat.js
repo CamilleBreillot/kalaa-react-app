@@ -1,10 +1,11 @@
-import { Card } from 'react-bootstrap';
+import { Card, Col } from 'react-bootstrap';
 
 const CardStat = ({ field, indicators }) => {
 
   const value = indicators.filter(e => e.name === field.name).map(e => e.value).reduce((prev, curr) => prev + curr, 0)
 
   return (
+    <Col>
       <Card>
         <div className="d-flex align-items-center flex-grow-1 text-center">
           <Card.Body>
@@ -15,6 +16,7 @@ const CardStat = ({ field, indicators }) => {
           </Card.Body>
         </div>
       </Card>
+    </Col>
   )
 }
 

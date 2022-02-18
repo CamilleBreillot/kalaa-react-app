@@ -9,12 +9,13 @@ const CollectList = ({ collects, onDelete }) => {
         <h5 className='text-center mb-3'>
           Liste de vos déclarations
         </h5>)}
-      {collects.map((collect) => (
-        <Collect
-          key={collect.id}
-          collect={collect}
-          onDelete={onDelete} />
-      ))}
+      {collects.length > 0 ?
+        collects.map((collect) => (
+          <Collect
+            key={collect.id}
+            collect={collect}
+            onDelete={onDelete} />
+        )) : "Aucune collecte déclarée"}
     </div>
   )
 }
