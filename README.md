@@ -1,6 +1,6 @@
 # kalaa-app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and a Rails backend API
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and a Rails backend API using a [template](https://github.com/lewagon/rails-templates)
 
 ### About this project
 
