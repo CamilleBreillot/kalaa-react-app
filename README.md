@@ -103,6 +103,7 @@ App has 2 pages :
 - **Store page**: page is quite simple with 2 main sections: collection list and form to add a collect. Validation is implemented. User has to enter all fields to validate the declaration.
 - **National page**: page starts with the dashboard where key indicators are reported and automatically recalculated when a new food collection is added. Then, there is the indicator setup section where the CSR manager can choose which indicator to track. Indicator is automatically added to form and dashboard. I also added the possibility to delete an indicator. Finally, the CSR manager can find the details of the collection added by the store owner. Delete option is disabled.
 - **CSS**: I choose to use bootstrap and Material UI to create a simple interface.
+- **Responsiveness**: app is developed for desktop only
 
 ## Improvements examples:
 - **Authentification** with signup and signin page should be added. Token for API is implemented but not used (so a user can only delete collection that he created for ex)
@@ -118,5 +119,6 @@ App has 2 pages :
 - **Reporting**:
   - Graphics should be added for better readability of indicators
   - Filters capabilities should be added to filter indicators by store for ex
+- **Mobile responsive**: app should be mobile responsive
 - **CSS**: Css is of course very basic :)
 
