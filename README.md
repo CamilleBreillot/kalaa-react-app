@@ -8,14 +8,23 @@ A food collection reporting app for store manager and corporate cocial responsib
 
 ### Built With
 
-- Ruby on Rails
+- Ruby on Rails (ruby '2.7.4' and rails '~> 6.1.4')
 - React
+
+Libraries used for the react project:
+- Formik
+- Boostrap
+- Material UI
+- yup
 
 ## Getting Started
 ### Installation
-1. Backend api is located in another repo. Go to [kalaa api app] (https://github.com/CamilleBreillot/kalaa-api-app).
+1. Backend api is located in another repo. Open another tab and go to [kalaa api app](https://github.com/CamilleBreillot/kalaa-api-app).
 - Clone the repo to your desktop
 - Navigate to the kalaa-api-app folder
+ ```sh
+   cd kalaa-api-app
+   ```
 - Install all dependencies needed for the Rails API:
  ```sh
    bundle install
@@ -28,19 +37,25 @@ A food collection reporting app for store manager and corporate cocial responsib
  ```sh
    rails s
    ```
-2. Then clone the current repo to your desktop (SPA React app is located in this folder)
-- Navigate to the kalaa-react-app folder
+2. Then clone the [current repo](https://github.com/CamilleBreillot/kalaa-react-app) to your desktop (SPA React app is located in this folder)
+- Navigate to the kalaa-react-app folder:
+ ```sh
+   cd kalaa-react-app
+   ```
 - Install all dependencies needed for the react app:
  ```sh
    npm install
    ```
-- Start server (it will run on localhost:2000:
+- Start server (it will run on localhost:2000)
  ```sh
    npm start
    ```
 - Open [http://localhost:2000](http://localhost:2000) to view it in your browser.
 
 ## Features
+App has 2 pages :
+1. One for the store manager
+
 ## Choices made
 ## Improvements
 
