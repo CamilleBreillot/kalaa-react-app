@@ -46,7 +46,7 @@ Libraries used for the react project:
  ```sh
    npm install
    ```
-- Start server (it will run on localhost:2000)
+- Start server (it will run on localhost:2000, the API server should still be running in a different terminal tab, using Port 3000)
  ```sh
    npm start
    ```
