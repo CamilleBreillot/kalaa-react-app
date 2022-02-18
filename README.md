@@ -19,8 +19,11 @@ Libraries used for the react project:
 
 ## Getting Started
 ### Installation
-1. Backend api is located in another repo. Open another tab and go to [kalaa api app](https://github.com/CamilleBreillot/kalaa-api-app).
-- Clone the repo to your desktop
+1. Backend api is located in another repo: [kalaa api app](https://github.com/CamilleBreillot/kalaa-api-app).
+- First clone the [kalaa api app](https://github.com/CamilleBreillot/kalaa-api-app) repo to your desktop
+```sh
+gh repo clone CamilleBreillot/kalaa-api-app
+   ```
 - Navigate to the kalaa-api-app folder
  ```sh
    cd kalaa-api-app
@@ -38,6 +41,9 @@ Libraries used for the react project:
    rails s
    ```
 2. Then clone the [current repo](https://github.com/CamilleBreillot/kalaa-react-app) to your desktop (SPA React app is located in this folder)
+```sh
+gh repo clone CamilleBreillot/kalaa-react-app
+   ```
 - Navigate to the kalaa-react-app folder:
  ```sh
    cd kalaa-react-app
