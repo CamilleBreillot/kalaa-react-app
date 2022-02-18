@@ -83,7 +83,7 @@ App has 2 pages :
 ## Choices made
 
 - **Modelling the data**: I choose to have 3 different models: collection, indicators and fields. I also created a user model but model is not used in this app as there is no authentification logic. Field was created to handle the additional indicator to track for food collection. Collection has a one to many relationship with indicators.
-- Data is fetched from an Rails API backend. I used Fetch API for its ease of use (coupled with the UseEffect hook)
+- **Data** is fetched from an Rails API backend. I used Fetch API for its ease of use (coupled with the UseEffect hook). A seed is setup with 3 collections, 9 indicators (3 for each collections) and 3 fields (indicators to track).
 - **Component tree**:
   - App:
     - Navbar
