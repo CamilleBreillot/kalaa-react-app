@@ -54,13 +54,13 @@ Libraries used for the react project:
 
 ## Features
 App has 2 pages :
-1. One for the store manager of Adoba where he can:
+**1. One for the store manager of Adoba where he can:**
 - See the list of his food collections 
 - Delete food collection
 - Add a food collection with indicators that are set by the CSR manager of Adoba (see section on national page below)
 ![This is an image](public/Storepage.png)
 
-2. A second page for the CSR manager where he can:
+**2. A second page for the CSR manager where he can:**
 - See the main statistic on food collection added by Adoba (reporting section)
   - Number of collects
   - Statistics on weight, number of participants and value of collects (those 3 indicators are setup in the seed)
