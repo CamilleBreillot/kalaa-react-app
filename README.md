@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### About this project
 
-Kalaa app is food collection reporting app for store manager and corporate social responsibility manager (CSR manager)
+Kalaa app is a food collection reporting app for store manager and corporate social responsibility manager (CSR manager)
 
 ### Built With
 
