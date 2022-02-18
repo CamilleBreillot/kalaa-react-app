@@ -9,7 +9,7 @@ Kalaa app is food collection reporting app for store manager and corporate socia
 ### Built With
 
 - Ruby on Rails (ruby '2.7.4' and rails '~> 6.1.4') with PostgreSQL database
-- React
+- React (useEffect, useLocation, useState hooks and react-router-dom)
 
 Libraries used for the react project:
 - Formik
@@ -64,7 +64,7 @@ App has 2 pages :
 - See the main statistic on food collection added by Adoba (reporting section)
   - Number of collects
   - Statistics on weight, number of participants and value of collects (those 3 indicators are setup in the seed)
-  - When the CSR manager added new indicator to track, the indicator is automatically added to the reporting. Numbers gets updated automatically when a new food collection is added by Adoba's store manager
+  - When the CSR manager added new indicator to track, the indicator is automatically added to the reporting (new card is created). Values of indicators in reporting gets updated automatically when a new food collection is added by Adoba's store manager
 - See the indicators list to be track when a food collection is declared
 - Add a new indicator to be tracked (form). The indicator is automatically added to the collection form on the Adoba store page and to the reporting
 - Remove an indicator from the list. The indicator is automatically removed from the collection form on the Adoba store page and from the reporting
