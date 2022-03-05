@@ -77,8 +77,8 @@ App has 2 pages :
 - Remove an indicator from the list. The indicator is automatically removed from the collection form on the Adoba store page and from the reporting
 - See the detailed list of food collection declared by Adoba (with name and association)
 
-![This is an image](public/Nationalpage.png)
-![This is an image](public/Nationalpage2.png)
+![This is an image](public/Nationalpage-new.png)
+![This is an image](public/Nationalpage-new-2.png)
 
 
 ## Choices made
