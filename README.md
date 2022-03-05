@@ -1,10 +1,10 @@
-# kalaa-app
+# SmartCollect app
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and Rails backend API using this [template](https://github.com/lewagon/rails-templates)
 
 ### About this project
 
-Kalaa app is a food collection reporting app for store manager and corporate social responsibility manager (CSR manager)
+SmartCollect app is a food collection reporting app for store manager and corporate social responsibility manager (CSR manager)
 
 ### Built With
 
