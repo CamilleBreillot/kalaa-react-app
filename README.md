@@ -64,7 +64,7 @@ App has 2 pages :
 - See the list of his food collections 
 - Delete food collection
 - Add a food collection with indicators that are set by the CSR manager of Adoba (see section on national page below)
-![This is an image](public/Storepage.png)
+![This is an image](public/Screenshot 2022-03-05 at 17.07.00.png)
 
 **2. A second page for the CSR manager where he can:**
 - See the main statistic on food collection added by Adoba (reporting section)
