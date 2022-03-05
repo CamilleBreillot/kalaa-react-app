@@ -19,14 +19,14 @@ Libraries used for the react project:
 
 ## Getting Started
 ### Installation
-1. Backend api is located in another repo: [kalaa api app](https://github.com/CamilleBreillot/kalaa-api-app).
-- First clone the [kalaa api app](https://github.com/CamilleBreillot/kalaa-api-app) repo to your desktop
+1. Backend api is located in another repo: [smart-collect api](https://github.com/CamilleBreillot/smart-collect-api).
+- First clone the [smart-collect api](https://github.com/CamilleBreillot/smart-collect-api) repo to your desktop
 ```sh
-gh repo clone CamilleBreillot/kalaa-api-app
+gh repo clone CamilleBreillot/smart-collect-api
    ```
-- Navigate to the kalaa-api-app folder
+- Navigate to the smart-collect-api folder
  ```sh
-   cd kalaa-api-app
+   cd smart-collect-api
    ```
 - Install all dependencies needed for the Rails API:
  ```sh
@@ -40,13 +40,13 @@ gh repo clone CamilleBreillot/kalaa-api-app
  ```sh
    rails s
    ```
-2. Then clone the [current repo](https://github.com/CamilleBreillot/kalaa-react-app) to your desktop (SPA React app is located in this folder)
+2. Then clone the [current repo](https://github.com/CamilleBreillot/smart-collect-app) to your desktop (SPA React app is located in this folder)
 ```sh
-gh repo clone CamilleBreillot/kalaa-react-app
+gh repo clone CamilleBreillot/smart-collect-app
    ```
-- Navigate to the kalaa-react-app folder:
+- Navigate to the smart-collect-app folder:
  ```sh
-   cd kalaa-react-app
+   cd smart-collect-app
    ```
 - Install all dependencies needed for the react app:
  ```sh
