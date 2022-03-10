@@ -128,5 +128,5 @@ App has 2 pages :
   - Filters capabilities should be added to filter indicators by store for ex
 - **Adding new indicators**: a better approach could be found to add new indicators to be tracked. Dynamic fields could be better handled.
 - **Mobile responsive**: app should be mobile responsive
-- **CSS**: Css is of course very basic :)
+- **CSS**: Css is of course very basic :)!
 
