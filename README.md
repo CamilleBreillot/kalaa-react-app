@@ -13,7 +13,7 @@ SmartCollect app is a food collection reporting app for store manager and corpor
 
 Libraries used for the react project:
 - Formik
-- Boostrap
+- Boostrap React
 - Material UI
 - yup
 
